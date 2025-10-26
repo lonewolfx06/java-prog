@@ -1,17 +1,27 @@
- import java.util.*;
+import java.util.*;
 class fib
 {
-    public static void main(String args[])
+    static int c=0,aa=1,bb=0;
+    static int cal(int no,int ii)
     {
-        int a=1,b=0,c=0;
-        Scanner Sc=new Scanner(System.in);System.out.println("Enter the number");
-        int n=Sc.nextInt();
-        for(int j=1;j<=n;j++)
+        if(ii<=no-1)
         {
             System.out.println(c);
-            c=a+b;
-            a=b;
-            b=c;
+            c=aa+bb;
+            aa=bb;
+            bb=c;
+            ii=ii+1;
+            cal(no,ii);
         }
+        return c;
+    }
+    public static void main (String args[])
+    {
+        Scanner Sc=new Scanner(System.in);
+        int n=Sc.nextInt();
+        int i=1;
+        fib obj=new fib();
+        int x=cal(n,i);
+        System.out.println(x);
     }
 }

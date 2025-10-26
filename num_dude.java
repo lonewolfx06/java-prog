@@ -1,45 +1,45 @@
 import java.util.*;
 class num_dude
 {
+    static int sum=0,n;   
     int num;
-    static int sum=0;
     num_dude()
     {
-        num=0;
+        n=0;
     }
     void input()
     {
         Scanner Sc=new Scanner(System.in);
-        System.out.println("Enter a number to check if it is dudeny no or not");
-        int num=Sc.nextInt();
+        System.out.println("Enter a number and I will tell You if it is a dudeny number or not");
+         num=Sc.nextInt();
     }
-    static int sum_digits(int x)
+    static int sum_of_digits(int x)
     {
-        int rem=0;
         if(x>0)
         {
-            rem=x%10;
+            int rem=x%10;
             sum=sum+rem;
             x=x/10;
-            sum_digits(x);
+            sum_of_digits(x);
         }
         return sum;
     }
-    void ishappy()
+    void ifdude()
     {
-        int a=num;
-        double n=Math.cbrt(num);
-        int j=sum_digits(a);
-        int l=(int)n; 
-        if(l==j)
-        System.out.println("YES it is a dudeny number "+l+" "+j);
+        double k=Math.cbrt(num); 
+        int l=sum_of_digits(num);
+        double j=(double)l;
+        if(j==k)
+        {
+            System.out.println("SUUUIIIIII, It is a NUMDUDE NUMBER "+ j+" "+k );
+        }
         else
-        System.out.println("NO it is not a dudeny number "+l+" "+j);
+        System.out.println("NO "+j+" "+k);
     }
     public static void main(String args[])
     {
-         num_dude obj=new num_dude();
-         obj.input();
-         obj.ishappy();
+        num_dude obj=new num_dude();
+        obj.input();
+        obj.ifdude();
     }
 }

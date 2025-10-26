@@ -1,5 +1,5 @@
 import java.util.*;
-class linear
+class selection
 {
     public static void main(String args[])
     {
@@ -15,17 +15,16 @@ class linear
         for(int i=0;i<n;i++)
         {
             for(int j=0;j<n-1;j++)
+            if(arr[j]>=arr[j+1])
             {
-                if(arr[i]<=arr[j])
-                {
-                    int temp=arr[i];
-                    arr[i]=arr[j];
-                    arr[j]=temp;
-                }
+                int em=arr[j];
+                arr[j]=arr[j+1];
+                arr[j+1]=em;
             }
         }
-        int m=n;
-        System.out.println(arr[n-1]);
-        System.out.println("At "+m);
+        for(int k=0;k<n;k++)
+        {
+            System.out.println(arr[k]);
+        }
     }
 }
